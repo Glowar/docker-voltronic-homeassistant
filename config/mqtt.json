@@ -1,12 +1,12 @@
 {
-    "server": "192.168.0.2",
+    "server": "192.168.1.20",
     "port": "1883",
     "topic": "homeassistant",
-    "devicename": "mpp",
-    "manufacturer": "MPPSolar",
-    "model": "PIP3024MSXE",
-    "serial": "92331908103079",
-    "ver": "20.13",
+    "devicename": "sila5kw",
+    "manufacturer": "Sila",
+    "model": "Sila5000MO",
+    "serial": "92932109105176",
+    "ver": "00072.00",
     "username": "mqtt",
     "password": "broker",
     "influx": {
