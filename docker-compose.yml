@@ -24,9 +24,9 @@ services:
     #  - "/dev/mem:/dev/mem"
 
     # USB Port Mapping
-      - /dev/bus/usb:/dev/bus/usb:rwm
-      - /dev/ttyUSB0:/dev/ttyUSB0:rwm
-      - /dev/ttyUSB1:/dev/ttyUSB1:rwm
+      #- /dev/bus/usb:/dev/bus/usb:rwm
+      #- /dev/ttyUSB0:/dev/ttyUSB0:rwm
+      #- /dev/ttyUSB1:/dev/ttyUSB1:rwm
 
     # Serial Port Mapping...
       - /dev/ttyMOD3:/dev/ttyMOD3
