@@ -17,8 +17,8 @@ services:
     privileged: true
     restart: always
 
-    volumes:
-        - ./config/:/etc/inverter/
+    #volumes:
+    #    - ./config/:/etc/inverter/
 
     devices:
     #  - "/dev/mem:/dev/mem"
@@ -29,9 +29,9 @@ services:
       - /dev/ttyUSB1:/dev/ttyUSB1:rwm
 
     # Serial Port Mapping...
-      - /dev/ttyS0:/dev/ttyS0
-      - /dev/ttyS1:/dev/ttyS1
-      - /dev/ttyS2:/dev/ttyS2
+      - /dev/ttyMOD3:/dev/ttyMOD3
+      #- /dev/ttyS1:/dev/ttyS1
+      #- /dev/ttyS2:/dev/ttyS2
 
   # Used to auto-update images as we release new versions...
   #watchtower:
