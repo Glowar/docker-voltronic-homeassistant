@@ -18,8 +18,6 @@ RUN apt update && apt install -y \
 ADD sources/ /opt/
 ADD config/ /etc/inverter/
 
-ENV password 123592
-
 RUN cd /opt/inverter-cli && \
     mkdir bin && cmake . && make && mv inverter_poller bin/
 
