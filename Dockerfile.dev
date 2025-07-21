@@ -30,8 +30,8 @@ HEALTHCHECK \
   CMD /opt/healthcheck
 
 ENV MQTT_PASSWORD="URA!"
-ENV INVERTER_DEVICE="dev\/tty01"
-ENV INVERTER_QPIRI=77
+ENV INVERTER_DEVICE="dev/tty01"
+ENV INVERTER_QPIRI="77"
 
 # Copy the entrypoint script to the container.
 COPY config.sh /config.sh
