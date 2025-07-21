@@ -11,9 +11,9 @@ services:
     container_name: sila5kw
     
     environment:
-      - MQTT_PASSWORD="URA!"
-      - INVERTER_DEVICE="\/dev\/tty01"
-      - INVERTER_QPIRI="77"
+      - MQTT_PASSWORD=URA!
+      - INVERTER_DEVICE=\/dev\/tty01
+      - INVERTER_QPIRI=77
 
     privileged: true
     restart: always
