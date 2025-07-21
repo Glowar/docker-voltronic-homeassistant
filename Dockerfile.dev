@@ -36,7 +36,7 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Set the custom entrypoint script as the entrypoint.
-CMD /entrypoint.sh
+CMD sh /entrypoint.sh
 
 # Set the custom entrypoint script as the entrypoint.
 WORKDIR /opt
