@@ -3,17 +3,26 @@ version: '3'
 services:
 
   sila5kw:
-  
-    environment:
-      - MQTT_PASSWORD=URA!
-      - INVERTER_DEVICE=\/dev\/tty01
-      - INVERTER_QPIRI=77
       
     build:
       context: .
       dockerfile: Dockerfile.dev
 
     container_name: sila5kw
+
+    environment:
+      - INVERTER_DEVICE=\/dev\/ttyMOD2
+      - INVERTER_QPIRI=104
+      - MQTT_SERVER=192.168.1.20
+      - MQTT_PORT=1883
+      - MQTT_TOPIC=homeassistant
+      - MQTT_DEVICENAME=sila5kw
+      - MQTT_MANUFACTURER=Sila
+      - MQTT_MODEL=Sila5000MO
+      - MQTT_SERIAL=92932109105176
+      - MQTT_VER=00072.00
+      - MQTT_USERNAME=mqtt
+      - MQTT_PASSWORD=123592
     
     privileged: true
     restart: always
@@ -26,13 +35,27 @@ services:
       #- /dev/ttyMOD3:/dev/ttyMOD3
 
   sila8kw:
-
+      
     build:
       context: .
       dockerfile: Dockerfile.dev
 
     container_name: sila8kw
 
+    environment:
+      - INVERTER_DEVICE=\/dev\/ttyMOD3
+      - INVERTER_QPIRI=109
+      - MQTT_SERVER=192.168.1.20
+      - MQTT_PORT=1883
+      - MQTT_TOPIC=homeassistant
+      - MQTT_DEVICENAME=sila8kw
+      - MQTT_MANUFACTURER=Sila
+      - MQTT_MODEL=Sila8000
+      - MQTT_SERIAL=96342108100227
+      - MQTT_VER=00054.01
+      - MQTT_USERNAME=mqtt
+      - MQTT_PASSWORD=123592
+      
     privileged: true
     restart: always
 
