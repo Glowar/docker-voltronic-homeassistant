@@ -30,6 +30,6 @@ HEALTHCHECK \
   CMD /opt/healthcheck
 
 # Set the custom entrypoint script as the entrypoint.
-ENTRYPOINT ["/etc/inverter/config.sh"]
+ENTRYPOINT ["/bin/bash", "/etc/inverter/config.sh"]
 WORKDIR /opt
 ENTRYPOINT ["/bin/bash", "/opt/inverter-mqtt/entrypoint.sh"]
