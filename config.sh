@@ -14,4 +14,4 @@ sed -i "s/\"password\":\s*\".*\"/\"password\": \"$MQTT_PASSWORD\"/g" /etc/invert
 
 echo "Config inverter"
 #sed -i "s/device=.*/device=$INVERTER_DEVICE/g" /etc/inverter/inverter.conf
-#sed -i "s/qpiri=.*/qpiri=$INVERTER_QPIRI/g/" /etc/inverter/inverter.conf
+sed -i "s/qpiri=.*/qpiri=$INVERTER_QPIRI/g/" /etc/inverter/inverter.conf
