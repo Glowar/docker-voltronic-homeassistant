@@ -30,14 +30,14 @@ HEALTHCHECK \
   CMD /opt/healthcheck
 
 # Copy the entrypoint script to the container.
-COPY config.sh /config.sh
+COPY entrypoint.sh /entrypoint.sh
 
 # Make the entrypoint script executable.
-RUN chmod +x /config.sh
+RUN chmod +x /entrypoint.sh
 
 # Set the custom entrypoint script as the entrypoint.
-#CMD /config.sh
+#CMD /entrypoint.sh
 
 # Set the custom entrypoint script as the entrypoint.
-WORKDIR /opt
-ENTRYPOINT ["/bin/bash", "/config.sh", "/opt/inverter-mqtt/entrypoint.sh"]
+WORKDIR /
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
