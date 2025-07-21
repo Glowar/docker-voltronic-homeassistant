@@ -13,6 +13,7 @@ RUN apt update && apt install -y \
         jq \
         mc \
         minicom \   
+        htop \   
         mosquitto-clients
 
 ADD sources/ /opt/
