@@ -36,8 +36,8 @@ COPY config.sh /config.sh
 RUN chmod +x /config.sh
 
 # Set the custom entrypoint script as the entrypoint.
-CMD /config.sh
+#CMD /config.sh
 
 # Set the custom entrypoint script as the entrypoint.
 WORKDIR /opt
-ENTRYPOINT ["/bin/bash", "/opt/inverter-mqtt/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash", "/config.sh", "/opt/inverter-mqtt/entrypoint.sh"]
