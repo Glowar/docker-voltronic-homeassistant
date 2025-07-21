@@ -1,16 +1,12 @@
 version: '3'
 
 services:
-  voltronic-mqtt:
 
-    # We're now (finally) supporting Multi-Arch builds (via Github actions) on Docker Hub!
-    #image: bushrangers/ha-voltronic-mqtt
-
-    # Uncomment if you want to build your own local version.
+  sila5kw:
+  
     build:
       context: .
       dockerfile: Dockerfile.dev
-
 
     container_name: sila5kw
 
@@ -21,31 +17,23 @@ services:
         #- ./config/:/etc/inverter/
 
     devices:
-    #  - "/dev/mem:/dev/mem"
-
-    # USB Port Mapping
-      #- /dev/bus/usb:/dev/bus/usb:rwm
-      #- /dev/ttyUSB0:/dev/ttyUSB0:rwm
-      #- /dev/ttyUSB1:/dev/ttyUSB1:rwm
-
-    # Serial Port Mapping...
       - /dev/ttyMOD2:/dev/ttyMOD2
       #- /dev/ttyMOD3:/dev/ttyMOD3
-      #- /dev/ttyS1:/dev/ttyS1
-      #- /dev/ttyS2:/dev/ttyS2
 
-  # Used to auto-update images as we release new versions...
-  #watchtower:
-    # Please see the following for configuration options:
-    #    https://containrrr.github.io/watchtower/container-selection/
-    #image: containrrr/watchtower
-    #container_name: watchtower
+  sila8kw:
 
-    #restart: always
-    #privileged: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+
+    container_name: sila8kw
+
+    privileged: true
+    restart: always
 
     #volumes:
-      #- /var/run/docker.sock:/var/run/docker.sock
+        #- ./config/:/etc/inverter/
 
-    #command: --interval 500
-
+    devices:
+      #- /dev/ttyMOD2:/dev/ttyMOD2
+      - /dev/ttyMOD3:/dev/ttyMOD3
