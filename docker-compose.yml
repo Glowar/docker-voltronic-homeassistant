@@ -29,7 +29,8 @@ services:
       #- /dev/ttyUSB1:/dev/ttyUSB1:rwm
 
     # Serial Port Mapping...
-      - /dev/ttyMOD3:/dev/ttyMOD3
+      - /dev/ttyMOD2:/dev/ttyMOD2
+      #- /dev/ttyMOD3:/dev/ttyMOD3
       #- /dev/ttyS1:/dev/ttyS1
       #- /dev/ttyS2:/dev/ttyS2
 
