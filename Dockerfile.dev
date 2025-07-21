@@ -19,8 +19,6 @@ RUN apt update && apt install -y \
 ADD sources/ /opt/
 ADD config/ /etc/inverter/
 
-RUN sh /etc/inverter/config.sh
-
 RUN cd /opt/inverter-cli && \
     mkdir bin && cmake . && make && mv inverter_poller bin/
 
@@ -33,4 +31,5 @@ HEALTHCHECK \
 
 # Set the custom entrypoint script as the entrypoint.
 WORKDIR /opt
+ENTRYPOINT ["sh", "/etc/inverter/config.sh"]
 ENTRYPOINT ["/bin/bash", "/opt/inverter-mqtt/entrypoint.sh"]
