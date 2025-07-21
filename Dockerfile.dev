@@ -22,12 +22,12 @@ ADD config/ /etc/inverter/
 RUN cd /opt/inverter-cli && \
     mkdir bin && cmake . && make && mv inverter_poller bin/
 
-HEALTHCHECK \
-    --interval=30s \
-    --timeout=10s \
-    --start-period=1m \
-    --retries=3 \
-  CMD /opt/healthcheck
+#HEALTHCHECK \
+#    --interval=30s \
+#    --timeout=10s \
+#    --start-period=1m \
+#    --retries=3 \
+#  CMD /opt/healthcheck
 
 # Copy the entrypoint script to the container.
 COPY entrypoint.sh /entrypoint.sh
@@ -36,9 +36,9 @@ COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 # Set the custom entrypoint script as the entrypoint.
-CMD sh /entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
 
 # Set the custom entrypoint script as the entrypoint.
 WORKDIR /opt
-# ENTRYPOINT ["/bin/bash", "/etc/inverter/config.sh"]
-ENTRYPOINT ["/bin/bash", "/opt/inverter-mqtt/entrypoint.sh"]
+#ENTRYPOINT ["/bin/bash", "/etc/inverter/config.sh"]
+#ENTRYPOINT ["/bin/bash", "/opt/inverter-mqtt/entrypoint.sh"]
