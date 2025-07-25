@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile.dev
 
     container_name: sila5kw
+    privileged: false
     stdin_open: true  
     tty: true  
     environment:
@@ -42,6 +43,7 @@ services:
       dockerfile: Dockerfile.dev
 
     container_name: sila8kw
+    privileged: false
     stdin_open: true  
     tty: true  
     environment:
