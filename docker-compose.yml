@@ -9,7 +9,8 @@ services:
       dockerfile: Dockerfile.dev
 
     container_name: sila5kw
-
+    stdin_open: true  
+    tty: true  
     environment:
       - INVERTER_DEVICE=\/dev\/ttyMOD2
       - INVERTER_QPIRI=104
@@ -41,7 +42,8 @@ services:
       dockerfile: Dockerfile.dev
 
     container_name: sila8kw
-
+    stdin_open: true  
+    tty: true  
     environment:
       - INVERTER_DEVICE=\/dev\/ttyMOD3
       - INVERTER_QPIRI=109
