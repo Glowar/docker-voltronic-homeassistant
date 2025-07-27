@@ -75,7 +75,7 @@ bool cInverter::query(const char *cmd) {
   }
 
   // Once connected, set the baud rate and other serial config (Don't rely on this being correct on the system by default...)
-  speed_t baud = B9600;
+  speed_t baud = B2400;
 
   // Speed settings (in this case, 2400 8N1)
   struct termios settings;
